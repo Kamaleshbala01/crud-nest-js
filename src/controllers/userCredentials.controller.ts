@@ -34,7 +34,6 @@ export class userCredentialController{
     @Put("updateUser/:id")
     async updateUser(@Param('id') id:number,@Req() req:Request,@Res() res:Response){
         try {
-            console.log(process.env.POSTGRES_PORT);
             const newData = req.body;
             const response = await this.userCredintialService.updateUserById(id,newData);
             if(response.affected===0) return res.status(404).json({message:"user not found",response});
