@@ -1,14 +1,14 @@
 import {Column,PrimaryGeneratedColumn,Entity} from 'typeorm'
 
-@Entity('user-credentials')
+@Entity('UserCredentials')
 export class UserCredentials {
     @PrimaryGeneratedColumn()
     id : Number
 
     @Column ({nullable :false})
-    userName : string;
+    username : string;
 
-    @Column({nullable:false})
+    @Column({nullable:false,unique:true})
     emailId : string;
 
     @Column({nullable:false})

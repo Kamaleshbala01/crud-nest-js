@@ -1,3 +1,4 @@
+import { UserCredentials } from "src/entities/user.entity";
 import { PostgresConnectionOptions } from "typeorm/driver/postgres/PostgresConnectionOptions";
 
 export const dbConnection:PostgresConnectionOptions = {
@@ -7,6 +8,6 @@ export const dbConnection:PostgresConnectionOptions = {
     username : "postgres",
     password : "kamalesh@2005",
     database :"user-crud",
-    entities : ["dist/**/*.entity{.ts,.js}"],
+    entities : [UserCredentials],
     synchronize :true
 }
