@@ -8,7 +8,8 @@ import { UserCredentialService } from "src/providers/userCredentials.service";
     {
         imports : [TypeOrmModule.forFeature([UserCredentials])],
         controllers:[userCredentialController],
-        providers : [UserCredentialService]
+        providers : [UserCredentialService],
+        exports : [UserCredentialService]
     }
    
 )
