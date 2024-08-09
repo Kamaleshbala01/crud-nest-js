@@ -1,9 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { error } from 'console';
+import * as dotenv from 'dotenv';
 declare const module:any
+
+dotenv.config();
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule,{cors:true});
+  const app = await NestFactory.create(AppModule);
+  app.enableCors();
   await app.listen(3001).then(()=>{
     console.log("SERVER running in http://localhost:3001");
   }).catch((error)=>{
